@@ -1,8 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import deepFreeze from 'deep-freeze';
 import expect from 'expect.js';
-import { createStore } from 'redux';
 
 const addCounter = (list) => {
   return [...list, 0];
