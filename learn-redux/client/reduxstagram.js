@@ -6,6 +6,10 @@ import css from './styles/style.styl';
 
 // React Router
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
+
+// Store
+import store, { history } from './store';
 
 // Components
 import Main from './components/Main';
@@ -13,12 +17,14 @@ import Single from './components/Single';
 import Photogrid from './components/Photogrid';
 
 const router = (
-  <Router history={browserHistory}>
-    <Route path="/" component={Main}>
-      <IndexRoute component={Photogrid}></IndexRoute>
-      <Route path="/view/:post_id" component={Single}></Route>
-    </Route>
-  </Router>
+  <Provider store={store}>
+    <Router history={history}>
+      <Route path="/" component={Main}>
+        <IndexRoute component={Photogrid}></IndexRoute>
+        <Route path="/view/:post_id" component={Single}></Route>
+      </Route>
+    </Router>
+  </Provider>
 );
 
 render(router, document.getElementById('root'));
