@@ -12,14 +12,14 @@ import { Provider } from 'react-redux';
 import store, { history } from './store';
 
 // Components
-import Main from './components/Main';
+import App from './components/App';
 import Single from './components/Single';
 import Photogrid from './components/Photogrid';
 
 const router = (
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={Main}>
+      <Route path="/" component={App}>
         <IndexRoute component={Photogrid}></IndexRoute>
         <Route path="/view/:post_id" component={Single}></Route>
       </Route>
